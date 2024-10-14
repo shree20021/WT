@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Add Content Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #content {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+ 
+    <div id="content">This is the original content.</div>
+    <input type="text" id="newContent" placeholder="Enter new content" />
+    <button id="addButton">Add Content</button>
+ 
+    <script>
+        $(document).ready(function() {
+            // Add new content
+            $('#addButton').click(function() {
+                var newContent = $('#newContent').val();
+                if (newContent) {
+                    $('#content').append("<p>" + newContent + "</p>");
+                    $('#newContent').val(''); // Clear the input field
+                } else {
+                    alert("Please enter some content.");
+                }
+            });
+        });
+    </script>
+ 
+</body>
+</html>
+ 
